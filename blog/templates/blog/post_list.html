@@ -6,10 +6,10 @@
         <h2>Melissa's Django Blog Project</h2>
     </div>
 
-    <div>
-        <body>
-            <p>Hi there!</p>
-            <p>It works!</p>
-        </body>
-    </div>
-</html>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h3><a href="">{{ post.title }}</a></h3>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
